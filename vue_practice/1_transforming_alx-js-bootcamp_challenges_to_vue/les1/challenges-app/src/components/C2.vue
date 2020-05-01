@@ -26,7 +26,13 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+/* ########################### */
+div {
+  display: none;
+}
+/* ########################### */
+
 button {
   position: relative;
   top: 50%;

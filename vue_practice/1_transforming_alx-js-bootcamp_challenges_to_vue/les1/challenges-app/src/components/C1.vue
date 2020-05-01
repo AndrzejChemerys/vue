@@ -48,6 +48,7 @@ div {
   display: none;
 }
 /* ########################### */
+
 .active {
   font-size: 64px;
   color: red;
