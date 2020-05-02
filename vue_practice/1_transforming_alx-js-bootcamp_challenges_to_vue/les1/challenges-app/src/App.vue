@@ -7,6 +7,7 @@
     <C5/>
     <C6/>
     <C7/>
+    <C8/>
   </div>
 </template>
 
@@ -18,6 +19,7 @@ import C4 from "./components/C4.vue";
 import C5 from "./components/C5.vue";
 import C6 from "./components/C6.vue";
 import C7 from "./components/C7.vue";
+import C8 from "./components/C8.vue";
 
 export default {
   name: "App",
@@ -29,6 +31,7 @@ export default {
     C5,
     C6,
     C7,
+    C8,
   },
 };
 </script>

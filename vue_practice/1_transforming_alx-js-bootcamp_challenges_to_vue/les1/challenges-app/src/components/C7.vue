@@ -11,7 +11,7 @@
             <span>{{wzrost}}</span>
         </div>
         <div>
-            <button @click="[calcBMI(), calcReduction()]">Oblicz</button>
+            <button class="button-primary" @click="[calcBMI(), calcReduction()]">Oblicz</button>
             <h1>{{wynnik}}</h1>
             <h2 v-if= "wynnik === 'Nadwaga'">Do prawidłowej wagi musisz zrzucić: {{wagaDoZrzucenia}}kg</h2>
         </div>
