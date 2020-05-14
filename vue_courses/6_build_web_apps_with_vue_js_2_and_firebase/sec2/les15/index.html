@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue basics</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style>
+
+
+    </style>
+</head>
+
+<body>
+    <h1>Vue Basics</h1>
+    <div id="app">
+        <h2>{{title}}</h2>
+        <ul>
+            <li v-for="item in items">{{item}}</li>
+        </ul>
+        <div v-for="(ninja, index) in ninjas">
+            <p>Name: {{index}} - {{ninja.name}}</p>
+            <p>Age: {{ninja.age}}</p>
+            <p>Belt color: {{ninja.belt}}</p>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
