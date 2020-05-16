@@ -1,7 +1,8 @@
 <template>
   <div class="blogs">
     <h2>{{ blogTitle }}</h2>
-    <div v-for="post in posts" :key="post.id">
+    <input type="text" v-model="searchTerm">
+    <div v-for="post in filteredPosts" :key="post.id">
       <h3>{{ post.title }}</h3>
       <p>{{ post.body | snippet }}</p>
     </div>
@@ -16,17 +17,24 @@ export default {
   name: "Blogs",
   data() {
     return {
-      blogTitle: "Blogs"
+      posts: [],
+      searchTerm: "",
+      blogTitle: "Blogs",
     };
   },
   methods: {
     changeTitle() {
       this.blogTitle = "Amazing Blog Site";
-    }
+    },
   },
-  beforeCreate() {
-    alert("beforeCreate hook");
+  computed: {
+    filteredPosts() {
+      return this.posts.filter(post => {
+        return post.title.match(this.searchTerm);
+      });
+    },
   },
+
   created() {
     alert("created hook");
     axios
@@ -39,9 +47,6 @@ export default {
         console.log(err);
       });
   },
-  beforeUpdate() {
-    alert("beforeUpdate");
-  }
 };
 </script>
 
