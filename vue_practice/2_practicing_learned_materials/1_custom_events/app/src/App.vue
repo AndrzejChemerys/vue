@@ -3,6 +3,7 @@
     <HelloWorld msg="Vue.js App"/>
     <Students :studentsL="studentsList" @deleteStud="removeStudent" />
     <OnlineStudents :studentsL="studentsList"/>
+    <Blog/>
   </div>
 </template>
 
@@ -10,6 +11,7 @@
 import HelloWorld from "./components/HelloWorld.vue";
 import Students from "./components/Students.vue";
 import OnlineStudents from "./components/OnlineStudents.vue";
+import Blog from "./components/Blog.vue";
 
 export default {
   name: "App",
@@ -17,6 +19,7 @@ export default {
     HelloWorld,
     Students,
     OnlineStudents,
+    Blog,
   },
   data() {
     return {
