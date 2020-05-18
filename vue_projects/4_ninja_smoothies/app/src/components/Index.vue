@@ -15,16 +15,13 @@
 </template>
 
 <script>
-
-import db from '@/firebase/init'
+import db from "@/firebase/init";
 
 export default {
   name: "Index",
   data() {
     return {
-      smoothies: [
-
-      ],
+      smoothies: [],
     };
   },
   methods: {
@@ -33,6 +30,16 @@ export default {
         return smoothie.id != id;
       });
     },
+  },
+  created() {
+    db
+      .collection("smoothies")
+      .get()
+      .then(snapshot => {
+        snapshot.forEach(doc => {
+          console.log(doc.data(), doc.id);
+        });
+      });
   },
 };
 </script>
