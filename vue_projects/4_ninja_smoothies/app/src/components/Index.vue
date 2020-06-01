@@ -38,6 +38,9 @@ export default {
       .then(snapshot => {
         snapshot.forEach(doc => {
           console.log(doc.data(), doc.id);
+          let smoothie = doc.data();
+          smoothie.id = doc.id;
+          this.smoothies.push(smoothie);
         });
       });
   },
