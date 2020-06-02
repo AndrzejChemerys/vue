@@ -2,16 +2,23 @@
   <div class="index container">
     <div class="card" v-for="smoothie in smoothies" :key="smoothie.id">
       <div class="card-content">
-        <i class="material-icons delete" @click="deleteSmoothie(smoothie.id)">delete</i>
-        <h2 class="indigo-text">{{smoothie.title}}</h2>
+        <i class="material-icons delete" @click="deleteSmoothie(smoothie.id)"
+          >delete</i
+        >
+        <h2 class="indigo-text">{{ smoothie.title }}</h2>
         <ul class="ingredients">
           <li v-for="(ing, index) in smoothie.ingredients" :key="index">
-            <span class="chip">{{ing}}</span>
+            <span class="chip">{{ ing }}</span>
           </li>
         </ul>
       </div>
       <span class="btn-floating btn-large halfawy-fab pink">
-        <router-link :to="{name: 'EditSmoothie', params: {smoothie_slug: smoothie.slug}}">
+        <router-link
+          :to="{
+            name: 'EditSmoothie',
+            params: { smoothie_slug: smoothie.slug }
+          }"
+        >
           <i class="material-icons edit">edit</i>
         </router-link>
       </span>
@@ -26,14 +33,13 @@ export default {
   name: "Index",
   data() {
     return {
-      smoothies: [],
+      smoothies: []
     };
   },
   methods: {
     deleteSmoothie(id) {
       console.log(id);
-      db
-        .collection("smoothies")
+      db.collection("smoothies")
         .doc(id)
         .delete()
         .then(() => {
@@ -41,11 +47,10 @@ export default {
             return smoothie.id != id;
           });
         });
-    },
+    }
   },
   created() {
-    db
-      .collection("smoothies")
+    db.collection("smoothies")
       .get()
       .then(snapshot => {
         snapshot.forEach(doc => {
@@ -55,7 +60,7 @@ export default {
           this.smoothies.push(smoothie);
         });
       });
-  },
+  }
 };
 </script>
 
@@ -87,5 +92,9 @@ export default {
   cursor: pointer;
   color: #aaa;
   font-size: 1.4em;
+}
+
+.card {
+  margin: 20px;
 }
 </style>
