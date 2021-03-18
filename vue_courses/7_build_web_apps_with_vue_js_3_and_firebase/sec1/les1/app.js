@@ -9,9 +9,9 @@ const app = Vue.createApp({
             age: 45,
             showBooks: true,
             books: [
-                {title: 'man of the wind', author: 'patrick rothfuss', img: 'assets/1.jpg'},
-                {title: 'the way of kings', author: 'brandon sanderson', img: 'assets/2.jpg'},
-                {title: 'the final empire', author: 'patrick rothfuss', img: 'assets/3.jpg'},
+                {title: 'man of the wind', author: 'patrick rothfuss', img: 'assets/1.jpg', isFav: true},
+                {title: 'the way of kings', author: 'brandon sanderson', img: 'assets/2.jpg', isFav: false},
+                {title: 'the final empire', author: 'patrick rothfuss', img: 'assets/3.jpg', isFav: true},
             ],
             x: 0,
             y: 0
