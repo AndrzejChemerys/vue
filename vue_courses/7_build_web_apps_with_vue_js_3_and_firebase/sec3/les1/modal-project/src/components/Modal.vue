@@ -1,6 +1,9 @@
 <template>
   <div class="backdrop">
-    <div class="modal"><p>modal content</p></div>
+    <div class="modal">
+      <h1>Modal</h1>
+      <p>modal content</p>
+    </div>
   </div>
 </template>
 
@@ -24,5 +27,10 @@ name: "Modal"
     background: rgba(0,0,0,0.5);
     width: 100%;
     height: 100%;
+  }
+  .modal h1 {
+    color: #03cfb4;
+    border: none;
+    padding: 0;
   }
 </style>
