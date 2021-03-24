@@ -1,15 +1,16 @@
 <template>
   <div class="backdrop">
-    <div class="modal">
-      <h1>Modal</h1>
-      <p>modal content</p>
+    <div class="modal" :class="{ sale: theme === 'sale'}">
+      <h1>{{ header }}</h1>
+      <p>{{ text }}</p>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-name: "Modal"
+  props: ['header', 'text', 'theme'],
+  name: "Modal"
 }
 </script>
 
