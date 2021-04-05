@@ -3,11 +3,28 @@
   <p>Welcome...</p>
   <div v-if="showModal">
     <Modal theme="sale" @close="toggleModal">
+      <template v-slot:linkls>
+        <a href="#">sign up now</a>
+        <a href="#">more info</a>
+      </template>
       <h1>Ninja Givaway!</h1>
       <p>Grab your ninja swag for half price!</p>
     </Modal>
   </div>
-  <button @click.shift="toggleModal">open modal</button>
+
+  <div v-if="showModal2">
+    <Modal @close="toggleModal">
+      <template v-slot:linkls>
+        <a href="#">sign up now</a>
+        <a href="#">more info</a>
+      </template>
+      <h1>Sign Up!</h1>
+      <p>For updated and promo codes!</p>
+    </Modal>
+  </div>
+
+  <button @click.alt="toggleModal">open modal (alt)</button>
+  <button @click="toggleModal2">open modal</button>
 </template>
 
 <script>
@@ -21,14 +38,16 @@ export default {
   data() {
     return {
       title: 'My First Vue App :)',
-      header: 'Sign up for the Giveaway!',
-      text: 'Grab your ninja swag for half price!',
-      showModal: false
+      showModal: false,
+      showModal2: false
     }
   },
   methods: {
     toggleModal(){
       this.showModal = !this.showModal
+    },
+    toggleModal2(){
+      this.showModal2 = !this.showModal2
     }
   }
 }
